@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wednesday Wannamaker Worlds</title>
+  <style>
+    :root {
+      --blue: rgba(30, 58, 138, 0.85);
+      --blue-dark: rgba(30, 64, 175, 0.85);
+      --yellow: #facc15;
+      --link-yellow: #ffec8b;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--yellow);
+      background: url('https://wednesdaywannamakerworlds.com/images/www-background.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .overlay {
+      background-color: var(--blue);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 0;
+      background: none;
+      box-shadow: none;
+      margin-bottom: 1rem;
+    }
+
+    header img {
+      width: 100%;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      display: block;
+    }
+
+    nav {
+      background-color: var(--yellow);
+      color: var(--blue-dark);
+      padding: 0.75rem 1rem;
+      border-radius: 0 0 1rem 1rem;
+      text-align: center;
+    }
+
+    nav hr {
+      border: none;
+      border-top: 2px solid var(--blue-dark);
+      margin: 1rem auto;
+      max-width: 90%;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 0.5rem 1rem;
+      padding: 0.25rem 0;
+      font-weight: bold;
+      color: var(--blue-dark);
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .mobile-menu-button {
+      display: none;
+      background: none;
+      border: 2px solid var(--blue-dark);
+      border-radius: 0.5rem;
+      color: var(--blue-dark);
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem;
+      cursor: pointer;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+    }
+
+    .mobile-nav a {
+      margin: 0.5rem 0;
+    }
+
+    section, footer {
+      background-color: var(--blue-dark);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    a.register {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--blue-dark);
+      padding: .75rem 1.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: .5rem;
+      margin-top: 1rem;
+    }
+
+    a.register:hover {
+      background: var(--link-yellow);
+    }
+
+    footer {
+      text-align: center;
+      font-size: .875rem;
+      color: #fef9c3;
+    }
+
+    @media (max-width: 600px) {
+      nav a.desktop-link {
+        display: none;
+      }
+
+      .mobile-menu-button {
+        display: block;
+      }
+
+      .mobile-nav.show {
+        display: flex;
+      }
+    }
+  </style>
+  <script>
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      nav.classList.toggle('show');
+    }
+  </script>
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <header>
+        <img src="https://wednesdaywannamakerworlds.com/images/banner.png" alt="Wednesday Wannamaker Worlds Banner" />
+        <nav>
+          <hr/>
+          <a href="#info" class="desktop-link">Event Info</a>
+          <a href="#format" class="desktop-link">Race Format</a>
+          <a href="#schedule" class="desktop-link">Schedule</a>
+          <a href="#location" class="desktop-link">Location</a>
+          <a href="#registration" class="desktop-link">Registration</a>
+
+          <button class="mobile-menu-button" onclick="toggleMobileNav()">☰ Menu</button>
+          <div id="mobileNav" class="mobile-nav">
+            <a href="#info">Event Info</a>
+            <a href="#format">Race Format</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#location">Location</a>
+            <a href="#registration">Registration</a>
+          </div>
+        </nav>
+      </header>
+
+      <section id="info">
+        <h2>Event Info</h2>
+        <p>
+          Wednesday Wannamaker Worlds is a weekly short-track mountain bike racing series held every Wednesday in August at Wannamaker North Trail in Goose Creek, SC.
+          The course is fun and fast, with categories for all skill levels—from kids to beginners, intermediates, and advanced riders.
+        </p>
+      </section>
+
+      <section id="format">
+        <h2>Race Format</h2>
+        <ul>
+          <li>Short‑track racing format with fast laps on cross-country terrain</li>
+          <li>Beginner, Intermediate, and Advanced race classes</li>
+          <li>Each race lasts 20–25 minutes + 1 final lap</li>
+          <li>Kid-friendly course for young riders (24" wheels and under)</li>
+        </ul>
+      </section>
+
+      <section id="schedule">
+        <h2>Weekly Race Schedule (Every Wednesday in August)</h2>
+        <ul>
+          <li><strong>4:00 PM</strong> – Course opens for practice</li>
+          <li><strong>5:00 PM</strong> – C Race (Beginner) – $25 – Trophies</li>
+          <li><strong>5:45 PM</strong> – Kids Race (24&quot; wheels & under, age &lt;13 free) – Trophies</li>
+          <li><strong>6:15 PM</strong> – B Race (Intermediate) – $25 – Trophies</li>
+          <li><strong>7:00 PM</strong> – A Race (Advanced) – $25 – Trophies</li>
+        </ul>
+        <p>
+          <strong>Note:</strong> Kids under 13 (as of August 2025) race free. All others: $25 per race.
+        </p>
+      </section>
+
+      <section id="location">
+        <h2>Location</h2>
+        <p>Wannamaker North Trail, Goose Creek, SC</p>
+        <p><small>Use the Westview Blvd entrance for parking and access to the trailhead.</small></p>
+      </section>
+
+      <section id="registration">
+        <h2>Registration</h2>
+        <p>Pre-register online for $25 per race. Kids under 13 race free. Trophies for each category winner.</p>
+        <a class="register" href="https://www.bikereg.com/wednesday-wannamaker-worlds" target="_blank" rel="noopener">
+          Register on BikeReg
+        </a>
+      </section>
+
+      <footer>
+        &copy; 2025 Wednesday Wannamaker Worlds. All rights reserved.
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
+

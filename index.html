@@ -35,17 +35,9 @@
       margin: 0 auto;
     }
 
-    header {
-      padding: 0;
-      background: none;
-      box-shadow: none;
-      margin-bottom: 1rem;
-    }
-
     header img {
       width: 100%;
-      border-top-left-radius: 1rem;
-      border-top-right-radius: 1rem;
+      border-radius: 1rem 1rem 0 0;
       display: block;
     }
 
@@ -129,10 +121,41 @@
       background: var(--link-yellow);
     }
 
+    .social-icons {
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin: 0 0.5rem;
+    }
+
+    .social-icons img {
+      width: 40px;
+      height: 40px;
+      vertical-align: middle;
+      transition: transform 0.2s ease;
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.1);
+    }
+
     footer {
       text-align: center;
       font-size: .875rem;
       color: #fef9c3;
+    }
+
+    .iframe-container {
+      overflow: hidden;
+      background-color: var(--blue-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .iframe-container a {
+      color: var(--yellow);
+      text-decoration: underline;
     }
 
     @media (max-width: 600px) {
@@ -149,12 +172,6 @@
       }
     }
   </style>
-  <script>
-    function toggleMobileNav() {
-      const nav = document.getElementById('mobileNav');
-      nav.classList.toggle('show');
-    }
-  </script>
 </head>
 <body>
   <div class="overlay">
@@ -168,7 +185,7 @@
           <a href="#schedule" class="desktop-link">Schedule</a>
           <a href="#location" class="desktop-link">Location</a>
           <a href="#registration" class="desktop-link">Registration</a>
-
+          <a href="#route" class="desktop-link">Course Route</a>
           <button class="mobile-menu-button" onclick="toggleMobileNav()">☰ Menu</button>
           <div id="mobileNav" class="mobile-nav">
             <a href="#info">Event Info</a>
@@ -176,6 +193,7 @@
             <a href="#schedule">Schedule</a>
             <a href="#location">Location</a>
             <a href="#registration">Registration</a>
+            <a href="#route">Course Route</a>
           </div>
         </nav>
       </header>
@@ -183,8 +201,9 @@
       <section id="info">
         <h2>Event Info</h2>
         <p>
-          Wednesday Wannamaker Worlds is a weekly short-track mountain bike racing series held every Wednesday in August at Wannamaker North Trail in Goose Creek, SC.
-          The course is fun and fast, with categories for all skill levels—from kids to beginners, intermediates, and advanced riders.
+          Wednesday Wannamaker Worlds is a weekly short-track mountain bike race series held every Wednesday in August at Wannamaker North Trail in Goose Creek, SC.
+          The course is fun and fast, designed for all skill levels, with race categories for beginners, intermediates, advanced riders, and kids on 24" wheels or smaller.
+          Class 1 e-bikes are welcome and will race with the A race group. These bikes are pedal-assist only, limited to 20mph, and will be scored separately.
         </p>
       </section>
 
@@ -195,6 +214,9 @@
           <li>Beginner, Intermediate, and Advanced race classes</li>
           <li>Each race lasts 20–25 minutes + 1 final lap</li>
           <li>Kid-friendly course for young riders (24" wheels and under)</li>
+          <li><strong>No race license required</strong></li>
+          <li><strong>Races are not eligible for upgrade points or national ranking</strong></li>
+          <li><strong>Keep your number plate for the full series — $5 replacement fee if lost</strong></li>
         </ul>
       </section>
 
@@ -203,13 +225,18 @@
         <ul>
           <li><strong>4:00 PM</strong> – Course opens for practice</li>
           <li><strong>5:00 PM</strong> – C Race (Beginner) – $25 – Trophies</li>
-          <li><strong>5:45 PM</strong> – Kids Race (24&quot; wheels & under, age &lt;13 free) – Trophies</li>
+          <li><strong>5:45 PM</strong> – Kids Race (24" wheels & under, age &lt;13 free) – Trophies</li>
           <li><strong>6:15 PM</strong> – B Race (Intermediate) – $25 – Trophies</li>
-          <li><strong>7:00 PM</strong> – A Race (Advanced) – $25 – Trophies</li>
+          <li><strong>7:00 PM</strong> – A Race (Advanced + Class 1 e-bikes) – $25 – Trophies</li>
         </ul>
         <p>
           <strong>Note:</strong> Kids under 13 (as of August 2025) race free. All others: $25 per race.
         </p>
+      </section>
+
+      <section id="countdown">
+        <h2>Countdown to the First Race</h2>
+        <p id="timer" style="font-size: 1.5rem; font-weight: bold;">Loading countdown...</p>
       </section>
 
       <section id="location">
@@ -220,17 +247,78 @@
 
       <section id="registration">
         <h2>Registration</h2>
-        <p>Pre-register online for $25 per race. Kids under 13 race free. Trophies for each category winner.</p>
-        <a class="register" href="https://www.bikereg.com/wednesday-wannamaker-worlds" target="_blank" rel="noopener">
-          Register on BikeReg
-        </a>
+        <p>
+          <a class="register" href="https://www.bikereg.com/wednesday-wannamaker-worlds" target="_blank" rel="noopener">
+            Register on BikeReg
+          </a>
+        </p>
+        <ul>
+          <li>$25 per race for Beginner (C), Intermediate (B), and Advanced (A) categories</li>
+          <li>Kids under 13 (as of August 2025) race free</li>
+          <li>Trophies awarded to winners in all race categories</li>
+          <li>Keep your race number for the series — $5 replacement fee if lost</li>
+        </ul>
       </section>
+
+      <!-- TRAILFORKS WIDGET START -->
+      <section id="route">
+        <h2>Course Route</h2>
+        <div class="iframe-container">
+          <iframe width="100%" height="400" frameborder="0" scrolling="no" src="https://www.trailforks.com/widgets/route/?id=62281&w=100%&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=imperial&basicmap=1"></iframe>
+          <p>
+            <a href="https://www.trailforks.com/route/wednesday-wannamaker-worlds-summer-2025/">Wednesday Wannamaker Worlds Summer 2025</a>
+            on <a href="https://www.trailforks.com/">Trailforks.com</a>
+          </p>
+        </div>
+      </section>
+      <!-- TRAILFORKS WIDGET END -->
 
       <footer>
         &copy; 2025 Wednesday Wannamaker Worlds. All rights reserved.
+        <div class="social-icons">
+          <a href="https://www.instagram.com/wednesday_wannamaker_worlds/" target="_blank" rel="noopener">
+            <img src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram" />
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61577831039240" target="_blank" rel="noopener">
+            <img src="https://img.icons8.com/fluency/48/facebook-new.png" alt="Facebook" />
+          </a>
+        </div>
       </footer>
     </div>
   </div>
+
+  <script>
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      if (nav) {
+        nav.classList.toggle('show');
+      }
+    }
+
+    function updateCountdown() {
+      const raceDate = new Date('August 6, 2025 17:00:00 EDT').getTime();
+      const now = new Date().getTime();
+      const distance = raceDate - now;
+
+      const timerEl = document.getElementById("timer");
+      if (!timerEl) return;
+
+      if (distance <= 0) {
+        timerEl.innerHTML = "The race has started!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      timerEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
 </body>
 </html>
 
